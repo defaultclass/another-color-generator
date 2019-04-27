@@ -1,0 +1,29 @@
+.text {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  transition: 0.2s ease;
+  margin: 0 1rem;
+}
+.text:focus {
+  outline: none;
+}
+.text:hover {
+  transform: translateY(-5px);
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 400px) {
+  .text {
+    margin: 0 2rem;
+  }
+}

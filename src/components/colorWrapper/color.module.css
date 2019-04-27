@@ -1,0 +1,13 @@
+.color {
+  width: calc(100vw - 3rem);
+  height: calc(100vw - 3rem);
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.12);
+}
+@media only screen and (min-width: 400px) {
+  .color {
+    width: 20rem;
+    height: 20rem;
+  }
+}
