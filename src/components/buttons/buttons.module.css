@@ -1,0 +1,35 @@
+.button {
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid;
+  font-size: 1.25rem;
+}
+
+/* Variants of the base style button */
+.primary {
+  composes: button;
+  border-color: rgb(105, 51, 230);
+  color: rgb(105, 51, 230);
+}
+.success {
+  composes: button;
+  border-color: rgb(23, 148, 50);
+  color: rgb(23, 148, 50);
+}
+
+/* Selected variants sent from options.js */
+.red {
+  composes: button;
+  border-color: rgb(211, 39, 39);
+  color: rgb(211, 39, 39);
+}
+.green {
+  composes: button;
+  border-color: rgb(15, 102, 15);
+  color: rgb(15, 102, 15);
+}
+.blue {
+  composes: button;
+  border-color: rgb(39, 93, 211);
+  color: rgb(39, 93, 211);
+}
