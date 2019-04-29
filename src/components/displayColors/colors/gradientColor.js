@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ColorWrapper from "../colorWrapper";
 import SetDeg from "../setDeg/setDeg";
 import CopyClipboard from "../../copyClipboard/copyClipboard";
+import styles from "../../../helpers/color.module.css";
 
 export default ({ colors, id }) => {
   // Allow the user to adjust the position
@@ -11,10 +12,10 @@ export default ({ colors, id }) => {
   const setDegValue = event => setDeg(event.target.value);
   const backgroundGradient = `linear-gradient(${deg}deg, rgb(${colors[0].join(", ")}), rgb(${colors[1].join(", ")}))`;
   return (
-    <>
+    <div className={styles.color}>
       <ColorWrapper style={{ background: backgroundGradient }} />
-      <SetDeg value={deg} handleChange={setDegValue} />
       <CopyClipboard value={backgroundGradient} id={id} />
-    </>
+      <SetDeg value={deg} handleChange={setDegValue} />
+    </div>
   );
 };

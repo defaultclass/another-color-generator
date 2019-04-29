@@ -1,35 +1,59 @@
+.default {
+  font-size: 1.25rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin: 0 1.5rem;
+}
+.default:focus,
+.default:hover {
+  outline: none;
+  background-color: rgba(238, 238, 238, 0.349);
+}
 .button {
+  composes: default;
   padding: 1rem 1.5rem;
   border-radius: 0.25rem;
   border: 2px solid;
   font-size: 1.25rem;
 }
+.button-text {
+  composes: default;
+  padding: 1rem;
+  border: none;
+  border-bottom: 2px solid;
+  font-size: 1.25rem;
+}
 
 /* Variants of the base style button */
-.primary {
+.button--primary {
   composes: button;
   border-color: rgb(105, 51, 230);
   color: rgb(105, 51, 230);
 }
-.success {
+.button--success {
   composes: button;
   border-color: rgb(23, 148, 50);
   color: rgb(23, 148, 50);
 }
 
 /* Selected variants sent from options.js */
-.red {
-  composes: button;
+.button-text--primary {
+  composes: button-text;
+  border-color: rgb(105, 51, 230);
+  color: rgb(105, 51, 230);
+}
+.button-text--red {
+  composes: button-text;
   border-color: rgb(211, 39, 39);
   color: rgb(211, 39, 39);
 }
-.green {
-  composes: button;
+.button-text--green {
+  composes: button-text;
   border-color: rgb(15, 102, 15);
   color: rgb(15, 102, 15);
 }
-.blue {
-  composes: button;
+.button-text--blue {
+  composes: button-text;
   border-color: rgb(39, 93, 211);
   color: rgb(39, 93, 211);
 }

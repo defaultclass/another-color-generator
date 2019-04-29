@@ -2,7 +2,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  padding: 3rem;
+  padding: 5rem;
 }
 body * {
   box-sizing: inherit;
@@ -10,5 +10,4 @@ body * {
 input,
 button {
   font-family: "Roboto", sans-serif;
-  margin: 1.5rem;
 }
