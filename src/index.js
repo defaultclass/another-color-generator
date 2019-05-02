@@ -6,8 +6,9 @@ import "./index.css";
 import { initialState } from "./helpers/initialState";
 import { randomNumber, lowerNumber, higherNumber } from "./helpers/randomNumber";
 import Options from "./components/getOptions/getOptions";
-import GetColors from "./components/getColors/getColors";
 import DisplayColors from "./components/displayColors/displayColors";
+import Header from "./components/header/header";
+import Container from "./utils/container";
 
 class App extends React.Component {
   state = initialState;
@@ -47,15 +48,34 @@ class App extends React.Component {
   // this will be used in the setColorValue function
   setOption = event => this.setState({ option: event.target.name });
 
+  // Copy the background style value
+  // and update the selected state.
+  // The selected state shows which color
+  // had its CSS copied
+  handleCopy = event => {
+    const target = event.target;
+    target.select();
+    document.execCommand("copy");
+    this.setState({ selected: event.target.id });
+  };
+
   render() {
-    const { setRandomNumber, setOption } = this;
-    const { option, firstColor, secondColor } = this.state;
+    const { setRandomNumber, setOption, handleCopy } = this;
+    const { option, firstColor, secondColor, selected } = this.state;
     const colorNames = ["red", "green", "blue"];
     return (
       <>
-        <Options options={colorNames} selected={option} setOption={setOption} />
-        <GetColors getRandomNumber={setRandomNumber} />
-        <DisplayColors firstColor={firstColor} secondColor={secondColor} />
+        <Header />
+        <Container style={{ paddingBottom: "3rem" }}>
+          <Options options={colorNames} selected={option} setOption={setOption} />
+          <DisplayColors
+            firstColor={firstColor}
+            secondColor={secondColor}
+            selected={selected}
+            getRandomNumber={setRandomNumber}
+            handleCopy={handleCopy}
+          />
+        </Container>
       </>
     );
   }
